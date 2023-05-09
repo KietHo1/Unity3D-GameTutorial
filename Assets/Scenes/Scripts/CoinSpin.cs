@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CoinSpin : MonoBehaviour
 {
-    public GameObject coin;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +13,6 @@ public class CoinSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coin.transform.Rotate(0, 4, 0, Space.World);
+        transform.Rotate(0, 4, 0, Space.World);
     }
 }
