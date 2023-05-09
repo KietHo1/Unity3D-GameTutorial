@@ -7,5 +7,6 @@ public class CoinCollect : MonoBehaviour
     private void OnTriggerEnter(Collider info)
     {
         Destroy(gameObject);
+        CoinSystem.coinscollect += 1;
     }
 }
