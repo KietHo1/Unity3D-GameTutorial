@@ -13,19 +13,20 @@ public class PickUp : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            item.GetComponent<Rigidbody>().useGravity = false;
-            item.GetComponent<Rigidbody>().isKinematic = true;
-            item.transform.position = target.transform.position;
-            item.transform.parent = tempParent.transform;
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            item.GetComponent<Rigidbody>().useGravity = true;
-            item.GetComponent<Rigidbody>().isKinematic = false;
-            item.transform.parent = null;
-            item.transform.position = target.transform.position;
-        }
+
+    }
+    private void OnMouseDown()
+    {
+        item.GetComponent<Rigidbody>().useGravity = false;
+        item.GetComponent<Rigidbody>().isKinematic = true;
+        item.transform.position = target.transform.position;
+        item.transform.parent = tempParent.transform;
+    }
+    private void OnMouseUp()
+    {
+        item.GetComponent<Rigidbody>().useGravity = true;
+        item.GetComponent<Rigidbody>().isKinematic = false;
+        item.transform.parent = null;
+        item.transform.position = target.transform.position;
     }
 }
