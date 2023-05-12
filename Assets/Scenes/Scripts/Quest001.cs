@@ -2,22 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class Quest001 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        MessageBox.SetActive(false);
-        TextMessage = TextBox.GetComponent<Text>().text;
-        QuestName = QuestText.GetComponent<Text>().text;
     }
     public int TextBoxOnCheck = 0;
     public GameObject MessageBox;
-    public GameObject TextBox;
+    public TMP_Text TextBox;
     public string TextMessage;
     public GameObject QuestBox;
-    public GameObject QuestText;
+    public TMP_Text QuestText;
     public string QuestName;
     // Update is called once per frame
     void Update()
@@ -39,17 +36,19 @@ public class Quest001 : MonoBehaviour
         {
             TextBoxOnCheck = 1;
             MessageBox.SetActive(true);
-            QuestName = "Active Quest: Recover The Loot";
-            QuestText.GetComponent<Text>().text = QuestName;
-            //TextBox.GetComponent<Text>().text = TextMessage;
-            TextBox.GetComponent<Text>().text = TextMessage;
+            TextMessage = "Villager: Hello, some bandits have stolen my money." +
+                "Could you retrieve it from them on the other side of the river?";
+            TextBox.text = TextMessage;
+            QuestName = "Active Quest: 'Recover The Loot'";
+            QuestText.text = QuestName;
+            
         }
         else
         {
             TextBoxOnCheck = 0;
             TextMessage = "Villager: Get going then!";
-            TextBox.GetComponent<Text>().text = TextMessage;
-            MessageBox.SetActive(false);
+            TextBox.text = TextMessage;
+            //MessageBox.SetActive(false);
         }
     }
 }
