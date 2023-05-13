@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class Quest001 : MonoBehaviour
+public class Quest001Start : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,8 @@ public class Quest001 : MonoBehaviour
     public GameObject QuestBox;
     public TMP_Text QuestText;
     public string QuestName;
+
+    public GameObject QuestItemToShow;
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +27,6 @@ public class Quest001 : MonoBehaviour
             {  //This needs to be set so as you need to be in a TextBox to do it
                 MessageBox.SetActive(false);
                 TextBoxOnCheck = 0;
-                TextMessage = "Villager: Get going then!";
             }
         }
     }
@@ -34,6 +35,7 @@ public class Quest001 : MonoBehaviour
     {
         if (TextBoxOnCheck == 0)
         {
+            QuestItemToShow.SetActive(true);
             TextBoxOnCheck = 1;
             MessageBox.SetActive(true);
             TextMessage = "Villager: Hello, some bandits have stolen my money." +
@@ -48,7 +50,12 @@ public class Quest001 : MonoBehaviour
             TextBoxOnCheck = 0;
             TextMessage = "Villager: Get going then!";
             TextBox.text = TextMessage;
-            //MessageBox.SetActive(false);
+            StartCoroutine(CarryOn());
         }
+    }
+    IEnumerator CarryOn()
+    {
+        yield return new WaitForSeconds(6);
+        MessageBox.SetActive(false);
     }
 }
