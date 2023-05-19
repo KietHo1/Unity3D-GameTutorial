@@ -38,7 +38,7 @@ public class Quest001Start : MonoBehaviour
             QuestItemToShow.SetActive(true);
             TextBoxOnCheck = 1;
             MessageBox.SetActive(true);
-            TextMessage = "Villager: Hello, some bandits have stolen my money." +
+            TextMessage = "Villager: Hello, some bandits have stolen my money." + " " +
                 "Could you retrieve it from them on the other side of the river?";
             TextBox.text = TextMessage;
             QuestName = "Active Quest: 'Recover The Loot'";
