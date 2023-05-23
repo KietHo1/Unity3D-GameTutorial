@@ -17,7 +17,6 @@ public class SavingTheGame : MonoBehaviour
             StreamWriter OurFile = File.CreateText(FileName);
 
             OurFile.WriteLine("savingthegame");
-            OurFile.WriteLine("load10coins");
             //Close the file so that it saves and closes the file afterwards
             OurFile.Close();
 
