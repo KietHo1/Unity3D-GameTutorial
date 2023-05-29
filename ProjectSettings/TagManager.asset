@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - warp001
+  - player
   layers:
   - Default
   - TransparentFX
