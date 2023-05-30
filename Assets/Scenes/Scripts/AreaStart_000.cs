@@ -9,6 +9,8 @@ public class AreaStart_000 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
         StartCoroutine(CarryOn1());
         StartCoroutine(CarryOn2());
     }
