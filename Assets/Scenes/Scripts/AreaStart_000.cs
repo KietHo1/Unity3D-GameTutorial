@@ -10,7 +10,7 @@ public class AreaStart_000 : MonoBehaviour
     void Start()
     {
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         StartCoroutine(CarryOn1());
         StartCoroutine(CarryOn2());
     }
@@ -18,7 +18,6 @@ public class AreaStart_000 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     IEnumerator CarryOn1()
