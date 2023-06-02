@@ -5,15 +5,19 @@ using UnityEngine.UI;
 using TMPro;
 public class Quest001End : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
     public int TextBoxOnCheck = 0;
     public GameObject MessageBox;
     public TMP_Text TextBox;
     public GameObject QuestBox;
     public TMP_Text QuestText;
+
+    public GameObject NPC002Idle;
+    public GameObject Quest002;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -33,9 +37,13 @@ public class Quest001End : MonoBehaviour
         {
             TextBoxOnCheck = 1;
             MessageBox.SetActive(true);
-            TextBox.text = "Villager: Thank you very much!";
-            QuestText.text = "Active Quest: (None)";
+            TextBox.text = "Villager: Thank you. Speak to the servant around the back for more";
+            QuestText.text = "Active Quest: Speak To Servant";
             StartCoroutine(CarryOn());//Run another command below
+
+            // Start Next Quest
+            NPC002Idle.SetActive(false);
+            Quest002.SetActive(true);
         }
 
         else
@@ -50,12 +58,6 @@ public class Quest001End : MonoBehaviour
     {
         yield return new WaitForSeconds(6);
         MessageBox.SetActive(false); //Turn off the message box
-        StartCoroutine(TheEnd()); //End Mission
-    }
-    IEnumerator TheEnd()
-    {
-        yield return new WaitForSeconds(6);
         gameObject.SetActive(false); //turn this object off
-        QuestBox.SetActive(false);
     }
 }
