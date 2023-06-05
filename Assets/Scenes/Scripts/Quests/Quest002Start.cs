@@ -11,6 +11,7 @@ public class Quest002Start : MonoBehaviour
     public TMP_Text QuestText;
 
     public GameObject Key001;
+    public GameObject CaveDoor;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,7 @@ public class Quest002Start : MonoBehaviour
             TextBox.text = "Servant: I want you to retrieve some Gold Bulion from the cave down the path. Here is the key.";
             QuestText.text = "Active Quest: Retrieve the Bullion";
             Key001.SetActive(true);
+            CaveDoor.SetActive(true);
         }
 
         else
