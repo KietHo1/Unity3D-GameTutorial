@@ -8,6 +8,8 @@ public class ExitWood_002 : MonoBehaviour
     public GameObject TheTextBox;
     public TMP_Text PlayerText;
     public TMP_Text QuestStatus;
+
+    public AudioSource Line003;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class ExitWood_002 : MonoBehaviour
         if (col.gameObject.name == "FPSController")
         {
             TheTextBox.SetActive(true);
+            Line003.Play();
             PlayerText.text = ("Looks like a village over that bridge");
             StartCoroutine(ExitWoodQuest());
         }

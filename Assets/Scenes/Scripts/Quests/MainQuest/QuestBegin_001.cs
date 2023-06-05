@@ -8,7 +8,10 @@ public class QuestBegin_001 : MonoBehaviour
     public TMP_Text QuestUpdate;
     public TMP_Text PlayerText;
     public GameObject TextDisplay;
-    public int TimerCounter = 0;
+    private int TimerCounter = 0;
+
+    public AudioSource Line001;
+    public AudioSource Line002;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +29,15 @@ public class QuestBegin_001 : MonoBehaviour
         if (TimerCounter == 1)
         {
             TextDisplay.SetActive(true);
+            Line001.Play();
             PlayerText.text = ("Where am I?");
             StartCoroutine(Timer(2f));
 
         }
         if (TimerCounter == 2)
         {
-            PlayerText.text = ("I need to find a way out of the wood.");
+            Line002.Play();
+            PlayerText.text = ("I need to find a way out of this wood.");
             StartCoroutine(Timer(2f));
         }
         if (TimerCounter == 3)
